@@ -1,6 +1,5 @@
 
 import numpy as np
-from datetime import datetime
 import pandas as pd
 import copy
 import matplotlib.pyplot as plt
@@ -75,34 +74,7 @@ def prophet_prediction(train, test, target, regressors=[]):
     return forecast
 
 
-
-# def forProphet2(train, test, target, regressors=[]):
-#     fitting = train[['Date_Time', target] + regressors]
-#     fitting.columns = ['ds', 'y'] + regressors
-
-#     m = Prophet(interval_width=0.95)
-#     numberofhours = 17
-#     hours_day = 24
-#     period_value = numberofhours / hours_day
-#     print(period_value)
-#     m.add_seasonality(name='17h', period=period_value*5, fourier_order=30)
-
-#     for regressor in regressors:
-#         m.add_regressor(regressor)
-    
-#     m.fit(fitting)
-    
-#     testProphet = test[['Date_Time', target] + regressors]
-#     testProphet.columns = ['ds', 'y'] + regressors
-    
-#     forecast = m.predict(testProphet)
-    
-#     plt.figure(figsize=(12, 8))
-#     plt.plot(testProphet['ds'], testProphet['y'], label='Actual')
-#     plt.plot(testProphet['ds'], forecast['yhat'], label='Predicted')
-#     plt.xlabel('Time')
-#     plt.ylabel(target)
-#     plt.legend()
-#     plt.show()
-    
-#     return forecast
+def clear_plot():
+    plt.clf()  # Clear the current figure
+    plt.cla()  # Clear the current axes
+    plt.close()  # Close the current figure (useful in interactive environments)
