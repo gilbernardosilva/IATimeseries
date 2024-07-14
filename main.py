@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from utils import regressor_co2, regressor_particles
-from functions import clean_data, extract_datetime, data_analysis, divide_data, prophet_prediction,clear_plot
+from functions import clean_data, extract_datetime, data_analysis, divide_data, compare_models
 DATASET_RATIO = 0.3
 
 # Load the Dataset
@@ -49,8 +49,8 @@ data_analysis(dataset,['Particules 1', 'Particules 2.5', 'Particules 10', 'CO2']
 
 train,test = divide_data(DATASET_RATIO,dataset) #Divides the dataset into two for testing and training using a ratio
 
-forecast = prophet_prediction(train,test, target='Particules 1', regressors=regressor_particles)
-forecast = prophet_prediction(train,test, target='Particules 2.5', regressors=regressor_particles)
-forecast = prophet_prediction(train,test, target='Particules 10', regressors=regressor_particles)
-forecast = prophet_prediction(train,test, target='CO2', regressors=regressor_co2)
+targets = ['Particules 1', 'Particules 2.5', 'Particules 10', 'CO2']
+regressors_dict = {'Particules 1': regressor_particles, 'Particules 2.5': regressor_particles, 
+                   'Particules 10': regressor_particles, 'CO2': regressor_co2}
 
+results_df = compare_models(train, test, targets, regressors_dict, seq_length=10, lag_features=10)
