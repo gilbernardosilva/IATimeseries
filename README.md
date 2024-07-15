@@ -55,10 +55,9 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
 ## Análise de Resultados
 
 
+## Análise de Resultados
 
-
-
-## Error Metrics Comparison:
+A tabela abaixo apresenta os resultados da comparação dos modelos Prophet, LSTM e Random Forest para a previsão da concentração de partículas (1, 2.5 e 10) e CO2, utilizando as métricas MSE, RMSE e MAE:
 
 | Modelo                   | Alvo                |      MSE |     RMSE |      MAE |   STD_DEV |     MEAN |
 |--------------------------|---------------------|----------:|---------:|---------:|----------:|---------:|
@@ -74,6 +73,26 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
 | Prophet                 | CO2                 | 971473.48 | 985.63354 | 521.13377 | 973.70317 | 1065.41659|
 | LSTM                    | CO2                 |  6902.1908 | 83.07943 | 40.09228 | 973.93849 | 1065.66544|
 | Random Forest            | CO2                 | 39964.1458 | 199.91034 | 75.75867 | 973.93849 | 1065.66544|
+
+**Análise:**
+
+A análise das métricas de erro revela um desempenho superior consistente do modelo LSTM em comparação com Prophet e Random Forest para todos os alvos (partículas e CO2). O LSTM apresenta os menores valores de MSE, RMSE e MAE, indicando uma maior precisão nas previsões e menor magnitude dos erros.
+
+O modelo Prophet demonstra dificuldades em prever a concentração de CO2, exibindo os maiores erros entre os modelos. As previsões de partículas também apresentam erros consideráveis, sugerindo que o modelo não captura adequadamente a complexidade das relações temporais e a influência dos regressores nesse conjunto de dados.
+
+O modelo Random Forest apresenta um desempenho intermediário, superando o Prophet em todos os casos, mas sendo menos preciso que o LSTM. Isso pode indicar que a estrutura baseada em árvores do Random Forest consegue capturar algumas das não linearidades nos dados, mas não tão efetivamente quanto o LSTM, que é projetado para lidar com sequências temporais.
+
+**Escolha do Melhor Modelo:**
+
+Com base nos resultados, o modelo LSTM se destaca como a melhor opção para prever a ocupação de salas de aula, considerando os dados e alvos analisados. Sua capacidade de aprender padrões complexos em séries temporais e incorporar informações de regressores resulta em previsões mais precisas e com menor erro em relação aos outros modelos.
+
+**Gráficos:**
+
+*Os gráficos comparando as previsões dos modelos com os valores reais para cada alvo seriam inseridos aqui.*
+
+**Considerações:**
+
+É importante ressaltar que a superioridade do LSTM não garante um desempenho ideal em todas as situações. A escolha do modelo ideal pode variar dependendo das características específicas dos dados, dos requisitos do problema e dos recursos computacionais disponíveis. Adicionalmente, a análise exploratória dos dados e a otimização dos hiperparâmetros dos modelos podem influenciar significativamente os resultados.
 
 
 
