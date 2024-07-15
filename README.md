@@ -89,46 +89,34 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 
 
 **Partículas 1 (PM1):**
-![alt text](<imgs/LSTM Particles 1.png>)
-[Previsões de partículas 1 - LSTM]
 
-![alt text](<imgs/Prophet Particles 1.png>)
-[Previsões de partículas 1 - Prophet]
-
-![alt text](<imgs/Random Forest Particles 1.png>)
-[Previsões de partículas 1 - Random Forest]
-
+| LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
+| :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| ![Previsões de partículas 1 - LSTM](<imgs/LSTM Particles 1.png>) | ![Previsões de partículas 1 - Prophet](<imgs/Prophet Particles 1.png>) | ![Previsões de partículas 1 - Random Forest](<imgs/Random Forest Particles 1.png>) |
+| *Previsões de partículas 1 - LSTM*                                                     | *Previsões de partículas 1 - Prophet*                                                    | *Previsões de partículas 1 - Random Forest*                                                |
 
 **Partículas 2.5 (PM2.5):**
-![alt text](<imgs/LSTM Particles 2.5.png>)
-[Previsões de partículas 2.5 - LSTM]
 
-#![Previsões de partículas 2.5 - Prophet](<imgs/Prophet Particles 2.5.png>)
-
-![alt text](<imgs/Random Forest Particles 2.5.png>)
-[Previsões de partículas 2.5 - Random Forest]
+| LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
+| :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| ![Previsões de partículas 2.5 - LSTM](<imgs/LSTM Particles 2.5.png>) | ![Previsões de partículas 2.5 - Prophet](<imgs/Prophet Particles 2.5.png>) | ![Previsões de partículas 2.5 - Random Forest](<imgs/Random Forest Particles 2.5.png>) |
+| *Previsões de partículas 2.5 - LSTM*                                                     | *Previsões de partículas 2.5 - Prophet*                                                    | *Previsões de partículas 2.5 - Random Forest*                                                |
 
 
 **Partículas 10 (PM10):**
-![alt text](<imgs/LSTM Particles 10.png>)
-[Previsões de partículas 10 - LSTM]
 
-![alt text](<imgs/Prophet Particles 10.png>)
-[Previsões de partículas 10 - Prophet]
-
-![alt text](<imgs/Random Forest Particles 10.png>)
-[Previsões de partículas 10 - Random Forest]
-
+| LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
+| :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| ![Previsões de partículas 10 - LSTM](<imgs/LSTM Particles 10.png>) | ![Previsões de partículas 10 - Prophet](<imgs/Prophet Particles 10.png>) | ![Previsões de partículas 10 - Random Forest](<imgs/Random Forest Particles 10.png>) |
+| *Previsões de partículas 10 - LSTM*                                                     | *Previsões de partículas 10 - Prophet*                                                    | *Previsões de partículas 10 - Random Forest*                                                |
 
 **Dióxido de Carbono (CO2):**
-![alt text](<imgs/LSTM CO2.png>)
-[Previsões de partículas CO2 - LSTM]
 
-![alt text](<imgs/Prophet CO2.png>)
-[Previsões de partículas CO2 - Prophet]
+| LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
+| :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| ![Previsões de partículas CO2 - LSTM](<imgs/LSTM CO2.png>)   | ![Previsões de partículas CO2 - Prophet](<imgs/Prophet CO2.png>)   | ![Previsões de partículas CO2 - Random Forest](<imgs/Random Forest CO2.png>)   |
+| *Previsões de CO2 - LSTM*                                                            | *Previsões de CO2 - Prophet*                                                           | *Previsões de CO2 - Random Forest*                                                           |
 
-![alt text](<imgs/Random Forest CO2.png>)
-[Previsões de partículas CO2 - Random Forest]
 
 
 
