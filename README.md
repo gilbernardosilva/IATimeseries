@@ -128,11 +128,22 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 
 ## Conclusões e Perspectivas de Desenvolvimento
 
-*Resumir as principais conclusões do trabalho, destacando o modelo que apresentou o melhor desempenho na previsão da ocupação das salas de aula.*
+Este estudo explorou a viabilidade de prever a ocupação de salas de aula utilizando dados de sensores de CO2, partículas e outros fatores ambientais. A análise comparativa dos modelos Prophet, LSTM e Random Forest revelou a superioridade do LSTM em termos de precisão, com os menores erros de previsão (MSE, RMSE e MAE) para todos os alvos.
 
-*Discutir as limitações do estudo e propor possíveis melhorias, como:*
+O LSTM demonstrou uma capacidade notável de capturar padrões complexos e não-lineares nos dados das séries temporais, superando as limitações dos modelos Prophet e Random Forest. Essa vantagem é particularmente evidente na previsão da concentração de CO2, onde o Prophet apresentou um desempenho significativamente inferior.
 
-* **Incorporar mais dados:** Utilizar datasets maiores e mais diversos para aumentar a robustez dos modelos.
-* **Testar outros modelos:** Explorar outros algoritmos de machine learning e deep learning, como redes neurais convolucionais (CNN) ou modelos híbridos.
-* **Incluir mais sensores:** Adicionar dados de outros sensores, como temperatura, humidade e movimento, para melhorar a precisão das previsões.
-* **Considerar o contexto:** Incorporar informações contextuais, como horário das aulas, tipo de sala e eventos especiais, para refinar os modelos.
+No entanto, é importante reconhecer as limitações deste estudo. A análise foi realizada em um conjunto de dados específico do projeto AirMon, que pode não ser representativo de todas as condições e cenários de ocupação de salas de aula. Adicionalmente, a utilização de apenas alguns tipos de sensores pode restringir a capacidade dos modelos de capturar informações relevantes para a previsão da ocupação.
+
+**Perspectivas de Desenvolvimento:**
+
+Para aprimorar a precisão e a robustez das previsões, futuras pesquisas podem explorar as seguintes direções:
+
+1. **Incorporação de Dados Mais Abrangentes:** A utilização de datasets maiores e mais diversos, abrangendo diferentes tipos de salas de aula, horários e condições ambientais, pode fortalecer a capacidade de generalização dos modelos.
+
+2. **Exploração de Modelos Híbridos:** A combinação de diferentes modelos, como o LSTM e o Random Forest, em um modelo híbrido pode potencialmente aproveitar os pontos fortes de cada abordagem e melhorar o desempenho geral.
+
+3. **Inclusão de Dados de Outros Sensores:** A integração de dados de outros sensores, como temperatura, umidade e movimento, pode fornecer informações adicionais relevantes para a previsão da ocupação, especialmente em situações em que a concentração de CO2 não é o único fator determinante.
+
+4. **Consideração do Contexto:** A incorporação de informações contextuais, como horário das aulas, tipo de sala (laboratório, auditório, etc.) e eventos especiais (palestras, exames), pode refinar os modelos e torná-los mais sensíveis às nuances da ocupação das salas de aula.
+
+Em suma, este estudo demonstra o potencial do uso de modelos de machine learning, particularmente o LSTM, para prever a ocupação de salas de aula com base em dados de sensores. As perspectivas de desenvolvimento apontam para um futuro promissor na otimização da gestão de espaços e na melhoria da qualidade do ar interior em ambientes educacionais.
