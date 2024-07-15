@@ -52,8 +52,6 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
    - Comparação dos resultados em uma tabela para identificar o modelo com melhor desempenho.
    - Visualização das previsões em relação aos valores reais para análise qualitativa.
 
-## Análise de Resultados
-
 
 ## Análise de Resultados
 
@@ -84,11 +82,56 @@ O modelo Random Forest apresenta um desempenho intermediário, superando o Proph
 
 **Escolha do Melhor Modelo:**
 
-Com base nos resultados, o modelo LSTM se destaca como a melhor opção para prever a ocupação de salas de aula, considerando os dados e alvos analisados. Sua capacidade de aprender padrões complexos em séries temporais e incorporar informações de regressores resulta em previsões mais precisas e com menor erro em relação aos outros modelos.
+Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para prever a ocupação de salas de aula, considerando os dados e alvos analisados. A sua capacidade de aprender padrões complexos em séries temporais e incorporar informações de regressores resulta em previsões mais precisas e com menor erro em relação aos outros modelos.
 
 **Gráficos:**
 
-*Os gráficos comparando as previsões dos modelos com os valores reais para cada alvo seriam inseridos aqui.*
+
+
+**Partículas 1 (PM1):**
+![alt text](<imgs/LSTM Particles 1.png>)
+[Previsões de partículas 1 - LSTM]
+
+![alt text](<imgs/Prophet Particles 1.png>)
+[Previsões de partículas 1 - Prophet]
+
+![alt text](<imgs/Random Forest Particles 1.png>)
+[Previsões de partículas 1 - Random Forest]
+
+
+**Partículas 2.5 (PM2.5):**
+![alt text](<imgs/LSTM Particles 2.5.png>)
+[Previsões de partículas 2.5 - LSTM]
+
+![alt text](<imgs/Prophet Particles 2.5.png>)
+[Previsões de partículas 2.5 - Prophet]
+
+![alt text](<imgs/Random Forest Particles 2.5.png>)
+[Previsões de partículas 2.5 - Random Forest]
+
+
+**Partículas 10 (PM10):**
+![alt text](<imgs/LSTM Particles 10.png>)
+[Previsões de partículas 10 - LSTM]
+
+![alt text](<imgs/Prophet Particles 10.png>)
+[Previsões de partículas 10 - Prophet]
+
+![alt text](<imgs/Random Forest Particles 10.png>)
+[Previsões de partículas 10 - Random Forest]
+
+
+**Dióxido de Carbono (CO2):**
+![alt text](<imgs/LSTM CO2.png>)
+[Previsões de partículas CO2 - LSTM]
+
+![alt text](<imgs/Prophet CO2.png>)
+[Previsões de partículas CO2 - Prophet]
+
+![alt text](<imgs/Random Forest CO2.png>)
+[Previsões de partículas CO2 - Random Forest]
+
+
 
 **Considerações:**
 
