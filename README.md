@@ -103,8 +103,7 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 ![alt text](<imgs/LSTM Particles 2.5.png>)
 [Previsões de partículas 2.5 - LSTM]
 
-![alt text](<imgs/Prophet Particles 2.5.png>)
-[Previsões de partículas 2.5 - Prophet]
+![Previsões de partículas 2.5 - Prophet](<imgs/Prophet Particles 2.5.png>)
 
 ![alt text](<imgs/Random Forest Particles 2.5.png>)
 [Previsões de partículas 2.5 - Random Forest]
