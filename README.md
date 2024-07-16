@@ -62,6 +62,13 @@ Através dos mesmos conseguimos pois determinar que regressores usar nos nossos 
 
 Os regressores são variáveis independentes utilizadas em modelos estatísticos e preditivos para explicar e prever variações em uma variável dependente. Eles ajudam a aumentar a precisão dos modelos ao considerar múltiplos fatores que podem influenciar o resultado desejado, controlando fatores de confusão e identificando relações causais entre variáveis. A inclusão de regressores relevantes permite selecionar as variáveis mais importantes para o modelo, melhorando a interpretabilidade e a eficácia das análises realizadas.
 
+No nosso caso, para o nosso *use case* utilizamos a seguinte lista de regressores para o CO2 e as partículas que foram escolhidos através dos mecanismos expostos a seguir.
+
+| ![Regressores](<imgs/Regressors.png>)| 
+|:--:| 
+| *Lista de Regressores de Partículas e CO2* |
+  
+
 #### Matrizes de Correlação
 
 Matrizes de correlação com heatmaps são essenciais para explorar relações entre variáveis em conjuntos de dados complexos, oferecendo tanto uma representação numérica detalhada quanto uma visualização gráfica intuitiva das correlações. Eles são utilizados principalmente na análise exploratória de dados para entender padrões e informar a escolha de variáveis em análises estatísticas e modelos preditivos.
