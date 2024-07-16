@@ -1,13 +1,13 @@
 import numpy as np
 import pandas as pd
-import copy
 from sklearn.metrics import mean_squared_error, mean_absolute_error
 from sklearn.preprocessing import MinMaxScaler
-from tensorflow.keras.models import Sequential
 from sklearn.ensemble import RandomForestRegressor
+from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import LSTM, Dense
 import matplotlib.pyplot as plt
 from prophet import Prophet
+import copy
 
 
 def clean_data(data):
@@ -286,13 +286,13 @@ def lstm_prediction(train, test, target, seq_length, regressors=[]):
     return mse, rmse, mae, std_dev, mean
 
 
-def inverse_transform_with_regressors(predictions, X, scaler, features):
+def inverse_transform_with_regressors(predictions, input_data, scaler, features):
     """
     Inverse transforms predictions from scaled values back to original scale, incorporating regressor variables.
 
     Args:
     - predictions (numpy.ndarray): Predictions in scaled format.
-    - X (numpy.ndarray): Input data for the transformation.
+    - input_data (numpy.ndarray): Input data for the transformation.
     - scaler (sklearn.preprocessing.MinMaxScaler): Scaler object used for normalization.
     - features (list): List of feature names, including the target and regressors.
 
@@ -304,7 +304,7 @@ def inverse_transform_with_regressors(predictions, X, scaler, features):
         # Create a temporary array with the same shape as the original training data
         to_inverse = np.zeros((1, len(features)))
         to_inverse[0, 0] = predictions[i, 0]  # Fill in the prediction
-        to_inverse[0, 1:] = X[i, -1, 1:]  # Fill in the regressors
+        to_inverse[0, 1:] = input_data[i, -1, 1:]  # Fill in the regressors
         # Inverse transform and extract the target column
         inv_predictions.append(scaler.inverse_transform(to_inverse)[0, 0])
     return np.array(inv_predictions)
@@ -401,6 +401,22 @@ def compare_models(
     random_state,
     num_estimators,
 ):
+    """
+    Compares the performance of Prophet, LSTM, and Random Forest models for multiple target variables.
+
+    Args:
+    - train (DataFrame): Training dataset.
+    - test (DataFrame): Test dataset.
+    - targets (list): List of target variable names to forecast.
+    - regressors_dict (dict): Dictionary where keys are target variable names and values are lists of regressor variables.
+    - seq_length (int): Length of sequences used for LSTM training.
+    - lag_features (int): Number of lagged features for Random Forest.
+    - random_state (int): Random seed for reproducibility in Random Forest.
+    - num_estimators (int): Number of trees in the Random Forest.
+
+    Returns:
+    - DataFrame: Comparison table of error metrics (MSE, RMSE, MAE, STD_DEV, MEAN) for each model and target.
+    """
     results = {}
 
     for target in targets:
@@ -433,7 +449,7 @@ def compare_models(
         # Random Forest
         mse, rmse, mae, std_dev, mean = random_forest_prediction(
             train, test, target, lag_features, num_estimators, random_state, regressors
-        )  # Using seq_length here
+        )
         results[f"RandomForest_{target}"] = {
             "MSE": mse,
             "RMSE": rmse,

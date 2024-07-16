@@ -73,7 +73,6 @@ train, test = divide_data(
     DATASET_RATIO, dataset
 )  # Split the dataset into training and testing sets using the specified ratio
 
-<<<<<<< HEAD
 # Model Comparison (Custom Function)
 results_df = compare_models(
     train,
@@ -85,12 +84,3 @@ results_df = compare_models(
     num_estimators=NUM_ESTIMATORS,
     random_state=RANDOM_STATE,
 )  # Compare different models using the training and testing sets
-=======
-train,test = divide_data(DATASET_RATIO,dataset) #Divides the dataset into two for testing and training using a ratio
-
-targets = ['Particules 1', 'Particules 2.5', 'Particules 10', 'CO2']
-regressors_dict = {'Particules 1': regressor_particles, 'Particules 2.5': regressor_particles, 
-                   'Particules 10': regressor_particles, 'CO2': regressor_co2}
-
-results_df = compare_models(train, test, targets, regressors_dict, seq_length=10, lag_features=10)
->>>>>>> f1c841fe26e6ddb9486533e2bbcf93f03bb8da2a
