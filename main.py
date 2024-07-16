@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Import constants and configurations
 from utils import (
@@ -68,6 +69,14 @@ print(dataset["Date_Time"].dtype)  # Print the data type of the 'Date_Time' colu
 data_analysis(dataset, ["Particules 1", "Particules 2.5", "Particules 10", "CO2"])
 # Plot graphical representation of the specified columns over time
 
+
+correlation_matrix = dataset.corr()
+
+plt.figure(figsize=(10, 8))
+sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5)
+plt.title("Matriz de Correlação entre Variáveis")
+plt.show()
+
 # Divide the Dataset into Training and Testing Sets (Custom Function)
 train, test = divide_data(
     DATASET_RATIO, dataset
@@ -84,3 +93,4 @@ results_df = compare_models(
     num_estimators=NUM_ESTIMATORS,
     random_state=RANDOM_STATE,
 )  # Compare different models using the training and testing sets
+
