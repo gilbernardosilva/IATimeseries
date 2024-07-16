@@ -70,11 +70,23 @@ data_analysis(dataset, ["Particules 1", "Particules 2.5", "Particules 10", "CO2"
 # Plot graphical representation of the specified columns over time
 
 
+# Compute the correlation matrix for the dataset
 correlation_matrix = dataset.corr()
 
+# Set the size of the figure
 plt.figure(figsize=(10, 8))
+
+# Create a heatmap to visualize the correlation matrix
+# - annot=True adds the correlation coefficient values inside the cells
+# - cmap="coolwarm" sets the color scheme of the heatmap
+# - fmt=".2f" formats the correlation coefficient values to 2 decimal places
+# - linewidths=0.5 sets the width of the lines that will divide the cells
 sns.heatmap(correlation_matrix, annot=True, cmap="coolwarm", fmt=".2f", linewidths=0.5)
+
+# Set the title of the heatmap
 plt.title("Matriz de Correlação entre Variáveis")
+
+# Display the heatmap
 plt.show()
 
 # Divide the Dataset into Training and Testing Sets (Custom Function)
@@ -93,4 +105,3 @@ results_df = compare_models(
     num_estimators=NUM_ESTIMATORS,
     random_state=RANDOM_STATE,
 )  # Compare different models using the training and testing sets
-

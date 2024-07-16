@@ -55,30 +55,36 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
 
 ### Análise de Resultados
 
-Inicialmente, realizamos um levantamento das variáveis em análise para assegurar a adequação dos gráficos de previsão e atualidade. Isso foi feito através de gráficos de séries temporais e plot boxes.
+Inicialmente, realizamos um levantamento das variáveis em análise para assegurar a adequação dos gráficos de previsão e atualidade. Isso foi feito através de matrizes de correlação com heatmaps, gráficos de séries temporais e plot boxes.
+Através dos mesmos conseguimos pois determinar que regressores usar nos nossos modelos, para determinar as variáveis que mais vão impactar o modelo positivamente.
 
+#### Regressores
 
-### Utilidade dos Box Plots
+Os regressores são variáveis independentes utilizadas em modelos estatísticos e preditivos para explicar e prever variações em uma variável dependente. Eles ajudam a aumentar a precisão dos modelos ao considerar múltiplos fatores que podem influenciar o resultado desejado, controlando fatores de confusão e identificando relações causais entre variáveis. A inclusão de regressores relevantes permite selecionar as variáveis mais importantes para o modelo, melhorando a interpretabilidade e a eficácia das análises realizadas.
 
-Os box plots são ferramentas valiosas que oferecem:
+#### Matrizes de Correlação
 
-- **Resumo Estatístico**: Resumem visualmente a distribuição dos dados, destacando a mediana, quartis e valores atípicos.
-- **Comparação**: Permitem a comparação eficiente de várias distribuições de dados lado a lado.
-- **Identificação de Outliers**: Facilitam a detecção de valores que se diferenciam significativamente da maioria dos dados.
+Matrizes de correlação com heatmaps são essenciais para explorar relações entre variáveis em conjuntos de dados complexos, oferecendo tanto uma representação numérica detalhada quanto uma visualização gráfica intuitiva das correlações. Eles são utilizados principalmente na análise exploratória de dados para entender padrões e informar a escolha de variáveis em análises estatísticas e modelos preditivos.
+No nosso caso utilizamos a mesma para determinar que regressores usar nos modelos.
+
+| ![Matriz de Correlação](<imgs/Correlation Matrix.png>)| 
+|:--:| 
+| *Matriz de Correlação do dataset* |
+  
+#### Box Plots
+
+Os box plots são gráficos que resumem a distribuição dos dados, destacando a mediana, quartis e outliers. São úteis para comparar distribuições, identificar outliers e visualizar assimetrias nos dados.
+
+- **Resumo Estatístico**: Apresentam visualmente a distribuição dos dados, destacando a mediana, quartis e valores atípicos.
+- **Comparação**: Permitem comparar várias distribuições lado a lado.
+- **Identificação de Outliers**: Facilitam a detecção de valores atípicos.
 - **Detecção de Assimetria**: Ajudam a visualizar se os dados apresentam uma distribuição simétrica ou enviesada.
-
 
 #### Utilidade dos Gráficos de Séries Temporais
 
-Os gráficos de séries temporais são fundamentais por diversas razões:
+Os gráficos de séries temporais são essenciais para entender a evolução dos dados ao longo do tempo, sendo utilizados em diversas aplicações analíticas e estratégicas.
 
-- **Identificação de Tendências**: Permitem identificar padrões de longo prazo nos dados ao longo do tempo.
-- **Análise de Sazonalidade**: São úteis para detectar variações que se repetem em períodos específicos, como sazonalidades anuais ou mensais.
-- **Detecção de Ciclos**: Permitem observar padrões que se repetem em intervalos de tempo mais longos do que as sazonalidades.
-- **Avaliação de Mudanças e Eventos**: Facilitam a análise de como mudanças específicas ou eventos impactam os dados ao longo do tempo.
-- **Previsão e Planejamento**: São essenciais para prever tendências futuras com base nos padrões identificados, auxiliando no planejamento estratégico.
-- **Monitoramento de Desempenho**: Permitem monitorar o desempenho de indicadores-chave ao longo do tempo, facilitando a análise de desempenho e a tomada de decisões informadas.
-
+Eles permitem a  Identificação de Tendências, Análise de Sazonalidade, Detecção de Ciclos, Avaliação de Mudanças e Eventos, Previsão e Planeamento, Monitorazação de Desempenho, entre outros.
 
 ### Exemplo Prático
 
@@ -88,7 +94,7 @@ Os gráficos de séries temporais utilizados ilustram as concentrações de dife
 |:--:| 
 | *Gráfico de Series de Partículas e CO2.* |
   
-  
+
 Plotboxes das variavéis em estudo.
 
 | ![Distribuição de CO2](<imgs/Distribuition of CO2.png>) | ![Distribuição de Partículas 1](<imgs/Distribuition of Particules 1.png>) | ![Distribuição de Partículas 2.5](<imgs/Distribuition of Particules 2.5.png>) | ![Distribuição de Partículas 10](<imgs/Distribuition of Particules 10.png>) |
