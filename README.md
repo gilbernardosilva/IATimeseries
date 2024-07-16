@@ -1,4 +1,4 @@
-# Análise de Séries Temporais e Previsão da Ocupação de Salas de Aula: Um Estudo com Dados de Sensores
+# Análise Avançada de Séries Temporais e Previsão da Ocupação de Salas de Aula com Base em Dados de Sensores de Qualidade do Ar
 
 ## Introdução
 
@@ -10,13 +10,13 @@ A qualidade do ar interior (QAI) é um fator crucial para o bem-estar e a produt
 
 Este projeto tem como objetivos:
 
-1. **Analisar e visualizar:** Explorar os dados de sensores (CO2, temperatura, humidade) coletados em salas de aula da UFP e/ou da escola secundária de Alpendurada, buscando padrões e correlações.
-2. **Desenvolver modelos de previsão:** Construir e avaliar modelos de machine learning para prever a ocupação das salas de aula com base nos dados dos sensores, com foco principal no CO2.
+1. **Analisar e visualizar:** Explorar os dados de sensores (CO2, temperatura, humidade, etc) coletados em salas de aula da UFP e/ou da escola secundária de Alpendurada, buscando padrões e correlações.
+2. **Desenvolver modelos de previsão:** Construir e avaliar modelos de machine learning para prever a ocupação das salas de aula com base nos dados dos sensores, com foco principal no CO2 e nas Particulas 1, 2.5 e 10.
 3. **Avaliar o desempenho:** Comparar o desempenho dos diferentes modelos de previsão em termos de métricas de erro, como o erro quadrático médio (MSE), erro absoluto médio (MAE) e raiz quadrada do erro quadrático médio (RMSE).
 
 ## Descrição do Problema
 
-O problema central é estimar a ocupação de salas de aula (número de pessoas presentes) utilizando dados de sensores de CO2, temperatura e humidade. A hipótese é que a concentração de CO2 aumenta com o número de pessoas na sala, e que essa relação pode ser modelada para prever a ocupação.
+O problema central é estimar a ocupação de salas de aula (número de pessoas presentes) utilizando dados de sensores. A hipótese é que a concentração de CO2 aumenta com o número de pessoas na sala, e que essa relação pode ser modelada para prever a ocupação.
 
 ## Estado da Arte
 
@@ -25,14 +25,14 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
 * **Modelos estatísticos:** Modelos lineares, ARIMA, etc.
 * **Machine learning:** Regressão linear, árvores de decisão, redes neurais (incluindo LSTM), etc.
 * **Deep learning:** Redes neurais mais complexas, como Transformers.
-* **Sensores:** Uso de diferentes tipos de sensores, como CO2, temperatura, humidade, movimento, Wi-Fi, etc.
+* **Sensores:** Uso de diferentes tipos de sensores, como CO2, temperatura, humidade, janelas, etc.
 
 ## Descrição do Trabalho Realizado
 
 1. **Coleta e Pré-processamento de Dados:**
-   - Obtenção de datasets do projeto AirMon contendo dados de sensores de CO2, temperatura e humidade em salas de aula.
-   - Limpeza dos dados: remoção de valores ausentes, outliers e duplicatas.
-   - Transformação dos dados: extração de atributos de data e hora para análise temporal.
+   - Obtenção de datasets do projeto AirMon contendo dados de sensores das salas de aula.
+   - Limpeza dos dados: remoção de valores ausente, nulos e duplicados.
+   - Transformação dos dados: extração de atributos de data e hora para análise temporal e associação a sazonalidades.
 
 2. **Análise Exploratória de Dados:**
    - Visualização da distribuição dos dados de cada sensor.
@@ -40,22 +40,22 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
    - Cálculo de estatísticas descritivas para cada sensor.
 
 3. **Divisão dos Dados:**
-   - Separação dos dados em conjuntos de treinamento e teste para avaliação dos modelos.
+   - Separação dos dados em conjuntos de treino e teste para avaliação dos modelos.
 
 4. **Modelagem e Previsão:**
-   - **Prophet:** Modelo de previsão de séries temporais do Facebook, que incorpora automaticamente componentes de tendência, sazonalidade e feriados.
+   - **Prophet:** Modelo de previsão de séries temporais do Facebook, que incorpora automaticamente componentes de tendência e sazonalidade.
    - **LSTM (Long Short-Term Memory):** Tipo de rede neural recorrente eficaz na modelagem de dados sequenciais e temporais.
-   - **Random Forest:** Algoritmo de aprendizado de máquina baseado em árvores de decisão que pode ser usado para regressão.
+   - **Random Forest:** Algoritmo de machine learning baseado em árvores de decisão que pode ser usado para regressão.
 
 5. **Avaliação do Desempenho:**
-   - Cálculo de métricas de erro (MSE, RMSE, MAE) para cada modelo e alvo (CO2, Partículas).
-   - Comparação dos resultados em uma tabela para identificar o modelo com melhor desempenho.
+   - Cálculo de métricas de erro (MSE, RMSE, MAE, STD_DEV, MEAN) para cada modelo e alvo (CO2, Partículas).
+   - Comparação dos resultados numa tabela para identificar o modelo com melhor desempenho.
    - Visualização das previsões em relação aos valores reais para análise qualitativa.
 
 
 ## Análise de Resultados
 
-A tabela abaixo apresenta os resultados da comparação dos modelos Prophet, LSTM e Random Forest para a previsão da concentração de partículas (1, 2.5 e 10) e CO2, utilizando as métricas MSE, RMSE e MAE:
+A tabela abaixo apresenta os resultados da comparação dos modelos Prophet, LSTM e Random Forest para a previsão da concentração de partículas (1, 2.5 e 10) e CO2, utilizando as métricas MSE, RMSE, MAE, STD_DEV e MEAN:
 
 | Modelo                   | Alvo                |      MSE |     RMSE |      MAE |   STD_DEV |     MEAN |
 |--------------------------|---------------------|----------:|---------:|---------:|----------:|---------:|
@@ -85,7 +85,6 @@ O modelo Random Forest apresenta um desempenho intermediário, superando o Proph
 Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para prever a ocupação de salas de aula, considerando os dados e alvos analisados. A sua capacidade de aprender padrões complexos em séries temporais e incorporar informações de regressores resulta em previsões mais precisas e com menor erro em relação aos outros modelos.
 
 **Gráficos:**
-
 
 
 **Partículas 1 (PM1):**
@@ -118,12 +117,9 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 | *Previsões de CO2 - LSTM*                                                            | *Previsões de CO2 - Prophet*                                                           | *Previsões de CO2 - Random Forest*                                                           |
 
 
-
-
 **Considerações:**
 
 É importante ressaltar que a superioridade do LSTM não garante um desempenho ideal em todas as situações. A escolha do modelo ideal pode variar dependendo das características específicas dos dados, dos requisitos do problema e dos recursos computacionais disponíveis. Adicionalmente, a análise exploratória dos dados e a otimização dos hiperparâmetros dos modelos podem influenciar significativamente os resultados.
-
 
 
 ## Conclusões e Perspectivas de Desenvolvimento
@@ -140,10 +136,10 @@ Para aprimorar a precisão e a robustez das previsões, futuras pesquisas podem 
 
 1. **Incorporação de Dados Mais Abrangentes:** A utilização de datasets maiores e mais diversos, abrangendo diferentes tipos de salas de aula, horários e condições ambientais, pode fortalecer a capacidade de generalização dos modelos.
 
-2. **Exploração de Modelos Híbridos:** A combinação de diferentes modelos, como o LSTM e o Random Forest, em um modelo híbrido pode potencialmente aproveitar os pontos fortes de cada abordagem e melhorar o desempenho geral.
+2. **Exploração de Modelos Híbridos e de transformados:** A combinação de diferentes modelos, como LSTM e Random Forest, em um modelo híbrido é uma estratégia avançada para aproveitar os pontos fortes de cada abordagem e melhorar o desempenho geral de um sistema de previsão ou modelagem. Além disso, a utilização de modelos transformados pode enriquecer ainda mais essa abordagem.
 
-3. **Inclusão de Dados de Outros Sensores:** A integração de dados de outros sensores, como temperatura, umidade e movimento, pode fornecer informações adicionais relevantes para a previsão da ocupação, especialmente em situações em que a concentração de CO2 não é o único fator determinante.
+3. **Inclusão de Dados de Outros Sensores:** A integração de dados de outros sensores pode fornecer informações adicionais relevantes para a previsão da ocupação, especialmente em situações em que a concentração de CO2 não é o único fator determinante.
 
 4. **Consideração do Contexto:** A incorporação de informações contextuais, como horário das aulas, tipo de sala (laboratório, auditório, etc.) e eventos especiais (palestras, exames), pode refinar os modelos e torná-los mais sensíveis às nuances da ocupação das salas de aula.
 
-Em suma, este estudo demonstra o potencial do uso de modelos de machine learning, particularmente o LSTM, para prever a ocupação de salas de aula com base em dados de sensores. As perspectivas de desenvolvimento apontam para um futuro promissor na otimização da gestão de espaços e na melhoria da qualidade do ar interior em ambientes educacionais.
+Em suma, este estudo demonstra o potencial do uso de modelos de machine learning, para prever a ocupação de salas de aula com base em dados de sensores. As perspectivas de desenvolvimento apontam para um futuro promissor na otimização da gestão de espaços e na melhoria da qualidade do ar interior em ambientes educacionais.
