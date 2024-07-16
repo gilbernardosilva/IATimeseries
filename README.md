@@ -200,3 +200,7 @@ Para aprimorar a precisão e a robustez das previsões, futuras pesquisas podem 
 Seria interessante no futuro dispor de algum tempo para testar os modelos mais aprofundadamente, com datasets maiores, regressores diferentes e hiperparametrização diferente. Mesmo assim, no nosso caso e com os nossos testes, adquirimos modelos bastante satisfatórios.
 
 Em suma, este estudo demonstra o potencial do uso de modelos de machine learning, para prever a ocupação de salas de aula com base em dados de sensores. As perspectivas de desenvolvimento apontam para um futuro promissor na otimização da gestão de espaços e na melhoria da qualidade do ar interior em ambientes educacionais.
+
+Trabalho elaborado por:
+Gil Silva 41805
+Nuno Moutinho 47181
