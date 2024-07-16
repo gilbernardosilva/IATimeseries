@@ -197,4 +197,6 @@ Para aprimorar a precisão e a robustez das previsões, futuras pesquisas podem 
 
 4. **Consideração do Contexto:** A incorporação de informações contextuais, como horário das aulas, tipo de sala (laboratório, auditório, etc.) e eventos especiais (palestras, exames), pode refinar os modelos e torná-los mais sensíveis às nuances da ocupação das salas de aula.
 
+Seria interessante no futuro dispor de algum tempo para testar os modelos mais aprofundadamente, com datasets maiores, regressores diferentes e hiperparametrização diferente. Mesmo assim, no nosso caso e com os nossos testes, adquirimos modelos bastante satisfatórios.
+
 Em suma, este estudo demonstra o potencial do uso de modelos de machine learning, para prever a ocupação de salas de aula com base em dados de sensores. As perspectivas de desenvolvimento apontam para um futuro promissor na otimização da gestão de espaços e na melhoria da qualidade do ar interior em ambientes educacionais.
