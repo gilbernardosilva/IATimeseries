@@ -53,8 +53,50 @@ A previsão da ocupação de espaços fechados tem sido objeto de estudo em dive
    - Visualização das previsões em relação aos valores reais para análise qualitativa.
 
 
-## Análise de Resultados
+### Análise de Resultados
 
+Inicialmente, realizamos um levantamento das variáveis em análise para assegurar a adequação dos gráficos de previsão e atualidade. Isso foi feito através de gráficos de séries temporais e plot boxes.
+
+
+### Utilidade dos Box Plots
+
+Os box plots são ferramentas valiosas que oferecem:
+
+- **Resumo Estatístico**: Resumem visualmente a distribuição dos dados, destacando a mediana, quartis e valores atípicos.
+- **Comparação**: Permitem a comparação eficiente de várias distribuições de dados lado a lado.
+- **Identificação de Outliers**: Facilitam a detecção de valores que se diferenciam significativamente da maioria dos dados.
+- **Detecção de Assimetria**: Ajudam a visualizar se os dados apresentam uma distribuição simétrica ou enviesada.
+
+
+#### Utilidade dos Gráficos de Séries Temporais
+
+Os gráficos de séries temporais são fundamentais por diversas razões:
+
+- **Identificação de Tendências**: Permitem identificar padrões de longo prazo nos dados ao longo do tempo.
+- **Análise de Sazonalidade**: São úteis para detectar variações que se repetem em períodos específicos, como sazonalidades anuais ou mensais.
+- **Detecção de Ciclos**: Permitem observar padrões que se repetem em intervalos de tempo mais longos do que as sazonalidades.
+- **Avaliação de Mudanças e Eventos**: Facilitam a análise de como mudanças específicas ou eventos impactam os dados ao longo do tempo.
+- **Previsão e Planejamento**: São essenciais para prever tendências futuras com base nos padrões identificados, auxiliando no planejamento estratégico.
+- **Monitoramento de Desempenho**: Permitem monitorar o desempenho de indicadores-chave ao longo do tempo, facilitando a análise de desempenho e a tomada de decisões informadas.
+
+
+### Exemplo Prático
+
+Os gráficos de séries temporais utilizados ilustram as concentrações de diferentes partículas e níveis de CO2 de maio de 2023 a fevereiro de 2024. Cada subgráfico representa uma medição distinta da variável ao longo do tempo.
+
+| ![Gráficos de série temporal](<imgs/Actual data.png>)| 
+|:--:| 
+| *Gráfico de Series de Partículas e CO2.* |
+  
+  
+Plotboxes das variavéis em estudo.
+
+| ![Distribuição de CO2](<imgs/Distribuition of CO2.png>) | ![Distribuição de Partículas 1](<imgs/Distribuition of Particules 1.png>) | ![Distribuição de Partículas 2.5](<imgs/Distribuition of Particules 2.5.png>) | ![Distribuição de Partículas 10](<imgs/Distribuition of Particules 10.png>) |
+|:-----------------------------------------------------:|:-------------------------------------------------------:|:---------------------------------------------------------:|:-------------------------------------------------------:|
+| Distribuição de concentração de CO2  | Distribuição de partículas 1           | Distribuição de partículas 2.5              | Distribuição de partículas 10            |
+
+
+### Comparação de Resultados
 A tabela abaixo apresenta os resultados da comparação dos modelos Prophet, LSTM e Random Forest para a previsão da concentração de partículas (1, 2.5 e 10) e CO2, utilizando as métricas MSE, RMSE, MAE, STD_DEV e MEAN:
 
 | Modelo                   | Alvo                |      MSE |     RMSE |      MAE |   STD_DEV |     MEAN |
@@ -91,14 +133,14 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 
 | LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
 | :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
-| ![Previsões de partículas 1 - LSTM](<imgs/LSTM Particles 1.png>) | ![Previsões de partículas 1 - Prophet](<imgs/Prophet Particles 1.png>) | ![Previsões de partículas 1 - Random Forest](<imgs/Random Forest Particles 1.png>) |
+| ![Previsões de partículas 1 - LSTM](<imgs/LSTM Particules 1.png>) | ![Previsões de partículas 1 - Prophet](<imgs/Prophet Particules 1.png>) | ![Previsões de partículas 1 - Random Forest](<imgs/Random Forest Particules 1.png>) |
 | *Previsões de partículas 1 - LSTM*                                                     | *Previsões de partículas 1 - Prophet*                                                    | *Previsões de partículas 1 - Random Forest*                                                |
 
 **Partículas 2.5 (PM2.5):**
 
 | LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
 | :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
-| ![Previsões de partículas 2.5 - LSTM](<imgs/LSTM Particles 2.5.png>) | ![Previsões de partículas 2.5 - Prophet](<imgs/Prophet Particles 2.5.png>) | ![Previsões de partículas 2.5 - Random Forest](<imgs/Random Forest Particles 2.5.png>) |
+| ![Previsões de partículas 2.5 - LSTM](<imgs/LSTM Particules 2.5.png>) | ![Previsões de partículas 2.5 - Prophet](<imgs/Prophet Particules 2.5.png>) | ![Previsões de partículas 2.5 - Random Forest](<imgs/Random Forest Particules 2.5.png>) |
 | *Previsões de partículas 2.5 - LSTM*                                                     | *Previsões de partículas 2.5 - Prophet*                                                    | *Previsões de partículas 2.5 - Random Forest*                                                |
 
 
@@ -106,7 +148,7 @@ Com base nos resultados, o modelo LSTM destaca-se como a melhor opção para pre
 
 | LSTM                                                                                   | Prophet                                                                                  | Random Forest                                                                              |
 | :-----------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
-| ![Previsões de partículas 10 - LSTM](<imgs/LSTM Particles 10.png>) | ![Previsões de partículas 10 - Prophet](<imgs/Prophet Particles 10.png>) | ![Previsões de partículas 10 - Random Forest](<imgs/Random Forest Particles 10.png>) |
+| ![Previsões de partículas 10 - LSTM](<imgs/LSTM Particules 10.png>) | ![Previsões de partículas 10 - Prophet](<imgs/Prophet Particules 10.png>) | ![Previsões de partículas 10 - Random Forest](<imgs/Random Forest Particules 10.png>) |
 | *Previsões de partículas 10 - LSTM*                                                     | *Previsões de partículas 10 - Prophet*                                                    | *Previsões de partículas 10 - Random Forest*                                                |
 
 **Dióxido de Carbono (CO2):**
