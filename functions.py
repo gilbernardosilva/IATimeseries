@@ -182,32 +182,12 @@ def lstm_prediction(train, test, target, seq_length, regressors=[], save_model=F
     Performs time series forecasting using an LSTM neural network.
 
     Args:
-        train (DataFrame): 
-            - The training dataset containing the historical data used to train the LSTM model. 
-            - This DataFrame should include columns for the target variable you want to predict (`target`) 
-              and any optional regressor variables (`regressors`).
-
-        test (DataFrame):
-            - The testing dataset used to evaluate the performance of the trained LSTM model. 
-            - Similar to `train`, this DataFrame should also include columns for the target variable and regressors.
-
-        target (str): 
-            - The name of the column in your DataFrames (`train` and `test`) that represents the variable you want to forecast. 
-            - This is the variable the LSTM will learn to predict.
-
-        seq_length (int): 
-            - The length of input sequences used to train the LSTM.
-            - Each sequence consists of `seq_length` consecutive time steps of the target and regressor variables.
-            - The LSTM learns to predict the next value in the sequence based on these past values.
-
-        regressors (list, optional): 
-            - A list of column names in your DataFrames that represent additional variables (regressors) 
-              that you believe might influence the target variable's behavior.
-            - These regressors are included as input features to the LSTM model alongside the target variable.
-
-        save_model (bool, optional): 
-            - A flag to indicate whether or not you want to save the trained LSTM model after training.
-            - Defaults to False (the model is not saved). If set to True, the model is saved to the 'models' directory.
+        train (DataFrame): Training dataset with columns for the target variable and optional regressors.
+        test (DataFrame): Testing dataset with columns for the target variable and optional regressors.
+        target (str): Column name of the target variable to forecast.
+        seq_length (int): Length of input sequences for the LSTM.
+        regressors (list, optional): Column names of additional regressors.
+        save_model (bool, optional): Flag to save the trained model (default is False).
 
     Returns:
         - tuple: A tuple containing the following performance metrics:
@@ -258,13 +238,12 @@ def lstm_prediction(train, test, target, seq_length, regressors=[], save_model=F
     # Save Model (If Specified)
     if save_model:
         # Create a "models" directory if it doesn't exist
-        os.makedirs('models', exist_ok=True)  
+        os.makedirs("models", exist_ok=True)
 
         # Save the model to the "models" directory
-        model_path = os.path.join('models', 'lstm_model_' + target + '.h5')
+        model_path = os.path.join("models", "lstm_model_" + target + ".h5")
         model.save(model_path)
         print(f"LSTM model saved to {model_path}")
-
 
     # Reshape Predictions to 2D
     train_predict = train_predict.reshape(-1, 1)
@@ -473,7 +452,14 @@ def compare_models(
         }
 
         # LSTM
-        mse, rmse, mae, std_dev, mean = lstm_prediction(train, test, target=target, seq_length=seq_length, regressors=regressors, save_model=True)
+        mse, rmse, mae, std_dev, mean = lstm_prediction(
+            train,
+            test,
+            target=target,
+            seq_length=seq_length,
+            regressors=regressors,
+            save_model=True,
+        )
         results[f"LSTM_{target}"] = {
             "MSE": mse,
             "RMSE": rmse,
