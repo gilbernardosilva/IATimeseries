@@ -255,7 +255,7 @@ def lstm_prediction(train, test, target, seq_length, regressors=[], save_model=F
     train_predict = model.predict(X_train)
     test_predict = model.predict(X_test)
 
-        # Save Model (If Specified)
+    # Save Model (If Specified)
     if save_model:
         # Create a "models" directory if it doesn't exist
         os.makedirs('models', exist_ok=True)  
